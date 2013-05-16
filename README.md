@@ -1,8 +1,8 @@
-# A pusher client for the node.js
+# Yet another pusher client for node.js
 
 This is a (diverged) fork of Abhishiv's work at https://github.com/abhishiv/pusher-node-client, so credit to him for writing this in the first place.
 
-## How to use
+## How to use it
 
 ```javascript
 PusherClient = require('nusher')
@@ -15,7 +15,7 @@ pusher_client = new PusherClient
 pusher_client.on 'connect', ->
   channel = pusher_client.subscribe('presence-users', {user_id: 'system'})
 
-  channel.on 'success', () ->
+  channel.on 'success', ->
 
     channel.on 'pusher_internal:member_removed', (data) ->
       console.log 'member_removed'
