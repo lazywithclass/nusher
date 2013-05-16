@@ -1,6 +1,7 @@
 # Yet another pusher client for node.js
 
 This is a (diverged) fork of Abhishiv's work at https://github.com/abhishiv/pusher-node-client, so credit to him for writing this in the first place.
+The main difference is that `nusher` is using https://github.com/hij1nx/EventEmitter2 so you could invoke `onAny` on a channel.
 
 ## How to use it
 
