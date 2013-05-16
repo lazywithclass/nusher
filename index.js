@@ -162,7 +162,7 @@
         }
         channel = this.channels[payload.channel];
         if (channel) {
-          return channel.emit(payload.event, JSON.parse(payload));
+          return channel.emit(payload.event, payload);
         }
       }
     };

@@ -96,6 +96,6 @@ class PusherClient extends EventEmitter2
         if channel then channel.emit 'success'
       channel = @channels[payload.channel]
       if channel 
-        channel.emit payload.event, JSON.parse payload
+        channel.emit payload.event, payload
 
 module.exports = PusherClient
