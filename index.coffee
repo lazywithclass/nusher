@@ -87,15 +87,15 @@ class PusherClient extends EventEmitter2
   recieveMessage: (msg) =>
     if msg.type is 'utf8' 
       payload = JSON.parse msg.utf8Data
-      if payload.event is "pusher:connection_established"
+      if payload.event is 'pusher:connection_established'
         data = JSON.parse payload.data
-        @state = { name: "connected", socket_id: data.socket_id }
+        @state = { name: 'connected', socket_id: data.socket_id }
         @emit 'connect'
-      if payload.event is "pusher_internal:subscription_succeeded"
+      if payload.event is 'pusher_internal:subscription_succeeded'
         channel = @channels[payload.channel]
         if channel then channel.emit 'success'
       channel = @channels[payload.channel]
       if channel 
-        channel.emit payload.event, JSON.parse payload.data
+        channel.emit payload.event, JSON.parse payload
 
 module.exports = PusherClient

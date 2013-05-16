@@ -146,15 +146,15 @@
       var channel, data, payload;
       if (msg.type === 'utf8') {
         payload = JSON.parse(msg.utf8Data);
-        if (payload.event === "pusher:connection_established") {
+        if (payload.event === 'pusher:connection_established') {
           data = JSON.parse(payload.data);
           this.state = {
-            name: "connected",
+            name: 'connected',
             socket_id: data.socket_id
           };
           this.emit('connect');
         }
-        if (payload.event === "pusher_internal:subscription_succeeded") {
+        if (payload.event === 'pusher_internal:subscription_succeeded') {
           channel = this.channels[payload.channel];
           if (channel) {
             channel.emit('success');
@@ -162,7 +162,7 @@
         }
         channel = this.channels[payload.channel];
         if (channel) {
-          return channel.emit(payload.event, JSON.parse(payload.data));
+          return channel.emit(payload.event, JSON.parse(payload));
         }
       }
     };
