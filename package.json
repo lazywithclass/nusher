@@ -1,0 +1,18 @@
+{
+  "name": "nusher",
+  "description": "Yet another pusher client for node.js",
+  "version": "0.0.1",
+  "author": "alberto.zaccagni@lazywithclass.com",
+  "keywords": [
+    "pusher",
+    "websockets",
+    "realtime"
+  ],
+  "repository": "git@github.com:lazywithclass/nusher.git",
+  "main": "index.js",
+  "dependencies": {
+    "node-uuid": "~1.4.0",
+    "websocket": "~1.0.1",
+    "eventemitter2": "~0.4.11"
+  }
+}
